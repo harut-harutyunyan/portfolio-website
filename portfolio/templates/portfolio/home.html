@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    {% include 'portfolio/include/home_message.html' %}
+        <div class="jumbotron " id="light">
+            <h4 class="text_sans">WORK EXPERIENCE</h4>
+            <hr class="my-4" />
+            {% for job in jobs %}
+                <div class="row unselectable">
+                    <div>
+                        <img class="rounded thumbnail article-img" src="{{ job.thumb.url }}" />
+                    </div>
+                    <div>
+                        <h5>{{ job.role }}</h5>
+                        <h6 class="lead">{{ job.company }}<small class="dates"> 
+                            {{ job.start_date|date:'N Y' }} -
+                            {% if job.end_date %}
+                                {{ job.end_date|date:'N Y' }}
+                            {% else %}
+                                present
+                            {% endif %}
+                        </small></h6>
+                    </div>
+                </div>
+                <p class="text_sans row">{{ job.description }}</p>
+                <hr class="my-4" />
+            {% endfor %}
+        </div>
+{% endblock content %}

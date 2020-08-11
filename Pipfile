@@ -1,0 +1,19 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+django = "==3.*"
+django-tinymce4-lite = "==1.8.*"
+pillow = "==7.2.*"
+gunicorn = "==20.*"
+whitenoise = "==5.1.*"
+django-environ = "*"
+django-storages = "==1.9.*"
+boto3 = "*"
+
+[requires]
+python_version = "3.8"

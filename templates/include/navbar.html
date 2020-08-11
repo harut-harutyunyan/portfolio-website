@@ -1,0 +1,56 @@
+{% load static %}
+<nav class="navbar navbar-expand-md navbar-dark fixed-left text_sans" id="hnav">
+    <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarsExampleDefault"
+        aria-controls="navbarsExampleDefault"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse mt-2" id="navbarsExampleDefault">
+        <ul class="navbar-nav">
+            <li class="unselectable">
+                {% if profile_pic %}
+                    <img class="rounded-circle account-img pull-left" src="{% static 'photo.png' %}"/>
+                {% else %}
+                    <img class="rounded-circle account-img pull-left" src="{% static 'nav_icon.png' %}"/>
+                {% endif %}
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'portfolio:home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'portfolio:about' %}">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'portfolio:projects' %}">Projects</a>
+            </li>
+            <li class="nav-item">
+                <hr class="my-4" />
+                <h6 class="navbar-text unselectable">ABOUT</h6>
+                <p class="navbar-text unselectable">
+                    Hi, I'm Harut.
+                    I use Python to craft tools and sift data.
+                    I’m currently looking for new ways to hone my development skills.
+                </p>
+                <p><a href="mailto:har8unyan@gmail.com">har8unyan@gmail.com</a></p>
+            </li>
+            <div class="nav-item flare-follow unselectable">
+                <a href="https://github.com/harut-harutyunyan" target="_blank">
+                <img src="{% static 'icon/git.png' %}" />
+                </a>
+
+                <a href="https://www.linkedin.com/in/harut-harutyunyan-87b92514b/" target="_blank">
+                <img src="{% static 'icon/linkedin.png' %}" />
+                </a>
+
+                <a href="mailto:har8unyan@gmail.com">
+                <img src="{% static 'icon/email.png' %}" />
+                </a>
+            </div>
+        </ul>
+    </div>
+</nav>

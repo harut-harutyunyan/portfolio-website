@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    {% for project in projects %}
+        <div class="jumbotron mt-4", {% if project.id|divisibleby:"2" %}id="darker"{% endif %}>
+            <div class="row">
+                <div class="col-lg-4">
+                    <h4 class="text_sans">{{ project.name }}</h4>
+                    <div class="skillList text_sans unselectable">
+                        {% for skill in project.skills_as_list %}
+                        <li>{{ skill }}</li>
+                        {% endfor %}
+                    </div>
+                    <hr />
+                    <h5 class="meta-header">Role</h6>
+                    <p class="text_sans">{{ project.role }}</p>
+                    <h5 class="meta-header">Description</h6>
+                    <div class="text_sans">{{ project.description|safe }}</div>
+                    {% if project.link or project.link_to_code %}
+                        <p><strong>More Info:</strong> 
+                            {% if project.link %}<a href="{{ project.link }}">{{ project.link_desc }}</a>{% endif %}
+                            {% if project.link_to_code %} <a href="{{ project.link_to_code }}">Source Code</a>{% endif %}
+                        </p>
+                    {% endif %}
+                </div>
+                <div class="col ml-8">
+                    <div class="content browser animated fadeInDown unselectable">
+                        <img src="{{ project.image.url }}" class="img-responsive rounded"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock content %}

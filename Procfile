@@ -1,0 +1,1 @@
+web: gunicorn har8unyan.wsgi
