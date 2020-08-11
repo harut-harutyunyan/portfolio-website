@@ -18,8 +18,12 @@
                     <div class="text_sans">{{ project.description|safe }}</div>
                     {% if project.link or project.link_to_code %}
                         <p><strong>More Info:</strong> 
-                            {% if project.link %}<a href="{{ project.link }}">{{ project.link_desc }}</a>{% endif %}
-                            {% if project.link_to_code %} <a href="{{ project.link_to_code }}">Source Code</a>{% endif %}
+                            {% if project.link %}
+                                <a href="{{ project.link }}" target="_blank">{{ project.link_desc }}</a>
+                            {% endif %}
+                            {% if project.link_to_code %}
+                                <a href="{{ project.link_to_code }}" target="_blank">Source Code</a>
+                            {% endif %}
                         </p>
                     {% endif %}
                 </div>
