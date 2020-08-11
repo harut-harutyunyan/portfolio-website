@@ -14,6 +14,8 @@ whitenoise = "==5.1.*"
 django-environ = "*"
 django-storages = "==1.9.*"
 boto3 = "*"
+psycopg2-binary = "*"
+django-on-heroku = "*"
 
 [requires]
 python_version = "3.8"
