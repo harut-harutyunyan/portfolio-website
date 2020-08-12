@@ -4,7 +4,7 @@ from django.http import HttpResponse
 
 def home(request):
     context = {
-        'jobs': reversed(Job.objects.all()),
+        'jobs': Job.objects.all().order_by('-id'),
     }
     return render(request,'portfolio/home.html', context)
 
@@ -17,7 +17,7 @@ def about(request):
 
 def projects(request):
     context = {
-        'projects': Project.objects.all(),
+        'projects': reversed(Project.objects.all().order_by('-id')),
         'title': 'Portfolio',
     }
     return render(request,'portfolio/projects.html', context)

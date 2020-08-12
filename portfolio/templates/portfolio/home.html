@@ -12,7 +12,7 @@
                     </div>
                     <div>
                         <h5>{{ job.role }}</h5>
-                        <h6 class="lead">{{ job.company }}<small class="dates"> 
+                        <h6 class="lead">{{ job.company }}<small style="color:#4d4d4d;" class="dates"> 
                             {{ job.start_date|date:'N Y' }} -
                             {% if job.end_date %}
                                 {{ job.end_date|date:'N Y' }}
