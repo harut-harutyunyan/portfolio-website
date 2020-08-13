@@ -1,86 +1,12 @@
 {% extends 'base.html' %}
-{% load static %}
 {% block content %}
     <div class="jumbotron mt-4">
         <div id="about">
             <h3 class="text_sans">About</h3>
             <hr class="my-4" />
-            <p class="lead maintext">
-                Hi, my name is Harutyun Harutyunyan. I work as a <a href="#developer">developer</a>
-                and <a href="#cgi">computer graphics</a> artist.<br><br>
-                I am a problem solver and team-player by heart,
-                always looking for the next challenge.
-                I love trying out new things and am constantly giving 100% on every project I’m contributing to.<br>
-                You can email me at <a href="mailto:har8unyan@gmail.com">har8unyan@gmail.com</a><br><br>
-            </p>
         </div>
-        <div id="developer">
-            <h3 class="text_sans">Developer</h3>
-            <br>
-            <p class="lead">
-                So the obligatory how I got started programming story:
-                I taught myself BASIC in school using my textbook.
-                My first nontrivial program was a text adventure game.<br><br>
-                I studied Applied Mathematics and Informatics in Artsakh State University.
-                In the same time I started working as a graphic designer.<br>
-                After university I abandoned programming for quite a while and was working as system administrator,
-                was doing more design work and learning computer graphics.<br>
-                In 2016 I moved to Yerevan and started working in an Animation Studio.
-                As a personal project I wanted to buid some kind of digital asset management system at my work.
-                So I started studying programming again.<br><br>
-                As of 2020 I’m working as a freelance developer for 2 years. Building web and desktop apps and automating workflows.<br>
-            </p>
-            <br>
-            <h4 class="text_sans">Tools</h4>
-            <p class="lead">
-                Sublime and Visual Studio Code is my editors of choice.
-                I’ve used various flavors of Linux on the desktop:
-                Linux Mint, CentOS, Ubuntu…<br>
-                In the end I realized that once the OS is set up and configured, they are all pretty much the same.<br>
-                Currently my development machine runs on Ubuntu. But I’m occasionally switching to Windows 10 so I'm utilizing the best of both.<br><br>
-                As far as programming languages, my weapon of choice is Python. Also I have some experience with Java,
-                JavaScript(React, P5) and Lua.<br>
-                I have a good working knowledge of:
-            </p>
-            <ul class="lead">
-                <li>Object-oriented Programming</li>
-                <li>Design Patterns</li>
-                <li>Data Structures</li>
-                <li>Algorithms</li>
-            </ul>
-            <p class="lead">
-                I am a fast learner, constantly studying and improving my skills.<br>
-                There is a long list of languages and tech that I want to explore further.
-                At the top is GO, Python’s data science and computer vision tools,
-                and some of the JavaScript frameworks like Angular.<br><br>
-                I love problem solving and competitive programming. I always participating in challenges at
-                <a href="https://leetcode.com" target="_blank">Leetcode</a>, and
-                <a href="https://www.codewars.com" target="_blank">Codewars</a>
-            </p>
-        </div>
-        <div id="cgi">
-            <h3 class="text_sans">Computer Graphics</h3>
-            <br>
-            <p class="lead">
-                I work as Computer Graphics artist and technical director for about 7 years.
-                My main areas of expertise are centered around creating photo-realistic final images using CGI.<br>
-                I have a strong understanding of:
-            </p>
-            <ul class="lead">
-                <li>Design</li>
-                <li>Color and Composition</li>
-                <li>3D Computer Graphics</li>
-                <li>Geometry and Topology</li>
-                <li>Linear Algebra</li>
-            </ul>
-            <p class="lead">
-                I'm comfortable working with wide range of graphics tools listing from
-                Photoshop and CorelDraw to high end CG software like Houdini, Maya and Nuke.<br><br>
-                Some of my works as a VFX artist.👇
-            </p>
-            <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/GOTLlaQK_a8"></iframe>
-            </div>
+        <div>
+            {{ personal.about_text|safe }}
         </div>
     </div>
 {% endblock content %}

@@ -4,6 +4,15 @@ from tinymce.widgets import TinyMCE
 from .models import *
 
 
+@admin.register(PersonalInfo)
+class AdminProject(admin.ModelAdmin):
+    list_display = ('email', 'id')
+
+    formfield_overrides = {
+        models.TextField: {'widget': TinyMCE()}
+    }
+
+
 @admin.register(Project)
 class AdminProject(admin.ModelAdmin):
     list_display = ('name', 'role')

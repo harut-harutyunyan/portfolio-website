@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load static %}
 {% block content %}
     {% for project in projects %}
         <div class="jumbotron mt-4", {% if project.id|divisibleby:"2" %}id="darker"{% endif %}>
