@@ -2,7 +2,8 @@ from django.shortcuts import render
 from .models import *
 
 
-PERSONAL = PersonalInfo.objects.first()
+# PERSONAL = PersonalInfo.objects.first()
+PERSONAL = 'hi'
 
 def home(request):
     context = {
