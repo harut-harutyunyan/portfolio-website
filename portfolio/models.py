@@ -2,6 +2,7 @@ from django.db import models
 import datetime
 
 
+
 class SingletonModel(models.Model):
 
     class Meta:
