@@ -4,8 +4,8 @@ from tinymce.widgets import TinyMCE
 from .models import *
 
 
-@admin.register(PersonalInfo)
-class AdminProject(admin.ModelAdmin):
+@admin.register(Personal)
+class AdminPersonal(admin.ModelAdmin):
     list_display = ('email', 'id')
 
     formfield_overrides = {

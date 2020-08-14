@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import *
 
 
-PERSONAL = PersonalInfo.objects.first()
+PERSONAL = Personal.objects.first()
 
 def home(request):
     context = {

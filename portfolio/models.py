@@ -2,26 +2,7 @@ from django.db import models
 import datetime
 
 
-
-class SingletonModel(models.Model):
-
-    class Meta:
-        abstract = True
-
-    def save(self, *args, **kwargs):
-        self.pk = 1
-        super(SingletonModel, self).save(*args, **kwargs)
-
-    def delete(self, *args, **kwargs):
-        pass
-
-    @classmethod
-    def load(cls):
-        obj, created = cls.objects.get_or_create(pk=1)
-        return obj
-
-
-class PersonalInfo(SingletonModel):
+class Personal(models.Model):
     email = models.EmailField(default='har8unyan@gmail.com')
     avatar = models.ImageField(default='personal/default.jpg', upload_to='personal')
     photo = models.ImageField(upload_to='personal')
@@ -57,4 +38,4 @@ class Job(models.Model):
         return self.role
 
 
-__all__ = ['Job', 'Project', 'PersonalInfo']
+__all__ = ['Job', 'Project', 'Personal']
