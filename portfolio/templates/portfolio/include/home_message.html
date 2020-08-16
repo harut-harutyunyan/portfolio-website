@@ -1,12 +1,3 @@
 <div class="jumbotron mt-4">
-    <p class="lead maintext">
-        Hi, I’m Harutyun, a developer and computer graphics artist.
-        I'm looking forward to a full-time software developer position.
-        And building a career in this field.<br>You can find out more
-        <a class="hlink" href="{% url 'portfolio:about' %}">about me</a>, have a look at some
-        <a class="hlink" href="{% url 'portfolio:projects' %}">things I’ve built</a> or
-        scroll down for my work experience.<br /><br />
-        If you are looking for a Python Developer, we should chat. I’m
-        currently looking for my next big thing</a>.
-    </p>
+    {{ personal.home_message|safe }}
 </div>

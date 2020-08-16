@@ -13,10 +13,10 @@
     <div class="collapse navbar-collapse mt-2" id="navbarsExampleDefault">
         <ul class="navbar-nav">
             <li class="unselectable">
-                {% if profile_pic %}
-                    <img class="rounded-circle account-img pull-left" src="{% static 'photo.png' %}"/>
+                {% if title == 'About' %}
+                    <img class="rounded-circle account-img pull-left" src="{{ personal.photo.url }}"/>
                 {% else %}
-                    <img class="rounded-circle account-img pull-left" src="{% static 'nav_icon.png' %}"/>
+                    <img class="rounded-circle account-img pull-left" src="{{ personal.avatar.url }}"/>
                 {% endif %}
             </li>
             <li class="nav-item">
@@ -32,11 +32,9 @@
                 <hr class="my-4" />
                 <h6 class="navbar-text unselectable">ABOUT</h6>
                 <p class="navbar-text unselectable">
-                    Hi, I'm Harut.
-                    I use Python to craft tools and sift data.
-                    I’m currently looking for new ways to hone my development skills.
+                    {{ personal.signature }}
                 </p>
-                <p><a href="mailto:har8unyan@gmail.com">har8unyan@gmail.com</a></p>
+                <p><a href="mailto:{{ personal.email }}">{{ personal.email }}</a></p>
             </li>
             <div class="nav-item flare-follow unselectable">
                 <a href="https://github.com/harut-harutyunyan" target="_blank">

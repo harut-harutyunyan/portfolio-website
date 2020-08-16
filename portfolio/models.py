@@ -1,6 +1,15 @@
 from django.db import models
 import datetime
 
+
+class Personal(models.Model):
+    email = models.EmailField(default='har8unyan@gmail.com')
+    avatar = models.ImageField(default='personal/default.jpg', upload_to='personal')
+    photo = models.ImageField(upload_to='personal')
+    signature = models.CharField(max_length=255)
+    home_message = models.TextField()
+    about_text = models.TextField()
+
 class Project(models.Model):
     name = models.CharField(max_length=100)
     role = models.CharField(max_length=255)
@@ -29,4 +38,4 @@ class Job(models.Model):
         return self.role
 
 
-__all__ = ['Job', 'Project']
+__all__ = ['Job', 'Project', 'Personal']
